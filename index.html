@@ -6,89 +6,84 @@
 		<link rel="stylesheet" type="text/css" href="node_modules/onsenui/css/onsen-css-components.css">
 	</head>
 	<body>
-		<ons-splitter>
-  <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
-    <ons-page>
-      <ons-list>
-        <ons-list-item onclick="fn.load('home.html')" tappable>
-          Home
-        </ons-list-item>
-        <ons-list-item onclick="fn.load('settings.html')" tappable>
-          Head
-        </ons-list-item>
-        <ons-list-item onclick="fn.load('about.html')" tappable>
-          Shoulders
-        </ons-list-item>
-        <ons-list-item onclick="fn.load('knees.html')" tappable>
-          Knees
-        </ons-list-item>
-      </ons-list>
-    </ons-page>
-  </ons-splitter-side>
-  <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
-</ons-splitter>
 
-<ons-template id="home.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
-          <ons-icon icon="md-menu"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-      <div class="center">
-        Main
-      </div>
-    </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      Explore options in the menu!<br>Made by Mobilu.
-    </p>
-  </ons-page>
-</ons-template>
+		<ons-tabbar position="top">
+		  <ons-tab page="home.html" label="Home" icon="square" active="true"></ons-tab>
+		  <ons-tab page="head.html" label="Head" icon="square"></ons-tab>
+		  <ons-tab page="shoulders.html" label="Shoulders" icon="square"></ons-tab>
+		  <ons-tab page="feet.html" label="Feet" icon="square"></ons-tab>
+		  <ons-tab page="about.html" label="About us" icon="square"></ons-tab>
+		</ons-tabbar>
 
-<ons-template id="settings.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
-          <ons-icon icon="md-menu"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-      <div class="center">
-        Head
-      </div>
-    </ons-toolbar>
-  </ons-page>
-</ons-template>
+		<!--ons-splitter>
+		  <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
+		    <ons-page>
+		      <ons-list>
+		        <ons-list-item onclick="fn.load('home.html')" tappable>
+		          Home
+		        </ons-list-item>
+		        <ons-list-item onclick="fn.load('settings.html')" tappable>
+		          Head
+		        </ons-list-item>
+		        <ons-list-item onclick="fn.load('about.html')" tappable>
+		          Shoulders
+		        </ons-list-item>
+		        <ons-list-item onclick="fn.load('about.html')" tappable>
+		          About us
+		        </ons-list-item>
+		      </ons-list>
+		    </ons-page>
+		  </ons-splitter-side>
+		  <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
+		</ons-splitter-->
 
-<ons-template id="about.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
-          <ons-icon icon="md-menu"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-      <div class="center">
-        Shoulders
-      </div>
-    </ons-toolbar>
-  </ons-page>
-</ons-template>
-<ons-template id="knees.html">
-  <ons-page>
-    <ons-toolbar>
-      <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
-          <ons-icon icon="md-menu"></ons-icon>
-        </ons-toolbar-button>
-      </div>
-      <div class="center">
-        Knees
-      </div>
-    </ons-toolbar>
-  </ons-page>
-</ons-template>
+		<ons-template id="home.html">
+		  <ons-page>
+		    <ons-toolbar>
+		      <div class="left">
+		        <ons-toolbar-button onclick="fn.open()">
+		          <ons-icon icon="md-menu"></ons-icon>
+		        </ons-toolbar-button>
+		      </div>
+		      <div class="center">
+		        Main
+		      </div>
+		    </ons-toolbar>
+		    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
+		      Swipe right to open the menu!
+		    </p>
+		  </ons-page>
+		</ons-template>
+
+		<ons-template id="settings.html">
+		  <ons-page>
+		    <ons-toolbar>
+		      <div class="left">
+		        <ons-toolbar-button onclick="fn.open()">
+		          <ons-icon icon="md-menu"></ons-icon>
+		        </ons-toolbar-button>
+		      </div>
+		      <div class="center">
+		        Settings
+		      </div>
+		    </ons-toolbar>
+		  </ons-page>
+		</ons-template>
+
+		<ons-template id="about.html">
+		  <ons-page>
+		    <ons-toolbar>
+		      <div class="left">
+		        <ons-toolbar-button onclick="fn.open()">
+		          <ons-icon icon="md-menu"></ons-icon>
+		        </ons-toolbar-button>
+		      </div>
+		      <div class="center">
+		        About
+		      </div>
+		    </ons-toolbar>
+		  </ons-page>
+		</ons-template>
 	<script>
 	window.fn = {};
 
