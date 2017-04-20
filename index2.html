@@ -6,52 +6,60 @@
 		<link rel="stylesheet" type="text/css" href="node_modules/onsenui/css/onsen-css-components.css">
 	</head>
 	<body>
-		<ons-splitter>
-  <ons-splitter-side id="menu" side="left" width="220px" collapse swipeable>
-    <ons-page>
-      <ons-list>
-        <ons-list-item onclick="fn.load('home.html')" tappable>
-          Home
-        </ons-list-item>
-        <ons-list-item onclick="fn.load('settings.html')" tappable>
-          Head
-        </ons-list-item>
-        <ons-list-item onclick="fn.load('about.html')" tappable>
-          Shoulders
-        </ons-list-item>
-        <ons-list-item onclick="fn.load('knees.html')" tappable>
-          Knees
-        </ons-list-item>
-      </ons-list>
-    </ons-page>
-  </ons-splitter-side>
-  <ons-splitter-content id="content" page="home.html"></ons-splitter-content>
-</ons-splitter>
+    <ons-navigator var="myNav" id="nav" page="start.html">
+</ons-navigator>
+<ons-template id="start.html">
+<ons-page>
+  <ons-toolbar>
+    <div class="center">Meditation</div>
+  </ons-toolbar>
+  <ons id="menu"></ons>
+  <ons-list>
 
-<ons-template id="home.html">
-  <ons-page>
-    <ons-toolbar>
+    <ons-list-header>Practices</ons-list-header>
+    <ons-list-item onclick="load('head.html')" tappable>
       <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
-          <ons-icon icon="md-menu"></ons-icon>
-        </ons-toolbar-button>
+        <img class="list-item__thumbnail" src="http://greensportsalliance.org/images/darkGreenSquare.gif">
       </div>
       <div class="center">
-        Main
+        <span class="list-item__title">Head</span><span class="list-item__subtitle">Lorem Ipsum your head</span>
       </div>
-    </ons-toolbar>
-    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
-      Explore options in the menu!<br>Made by Mobilu.
-    </p>
-  </ons-page>
-</ons-template>
+    </ons-list-item>
 
-<ons-template id="settings.html">
+<ons-list-item onclick="load('shoulders.html')" tappable>
+      <div class="left">
+        <img class="list-item__thumbnail" src="http://greensportsalliance.org/images/darkGreenSquare.gif">
+      </div>
+      <div class="center">
+        <span class="list-item__title">Shoulders</span><span class="list-item__subtitle">All time favourite</span>
+      </div>
+    </ons-list-item>
+
+    <ons-list-item onclick="load('knees.html')" tappable>
+      <div class="left">
+        <img class="list-item__thumbnail" src="http://greensportsalliance.org/images/darkGreenSquare.gif">
+      </div>
+      <div class="center">
+        <span class="list-item__title">Knees</span><span class="list-item__subtitle">Feel your knees</span>
+      </div>
+    </ons-list-item>
+
+<ons-list-item onclick="load('about.html')" tappable>
+      <div class="left">
+        <img class="list-item__thumbnail" src="http://greensportsalliance.org/images/darkGreenSquare.gif">
+      </div>
+      <div class="center">
+        <span class="list-item__title">About</span><span class="list-item__subtitle">About us and the app!</span>
+      </div>
+    </ons-list-item>
+</ons-page>
+</ons-template>
+<ons-template id="head.html">
   <ons-page>
     <ons-toolbar>
       <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
-          <ons-icon icon="md-menu"></ons-icon>
+        <ons-toolbar-button onclick="back()">
+          <ons-back-button>Back</ons-back-button>
         </ons-toolbar-button>
       </div>
       <div class="center">
@@ -61,12 +69,12 @@
   </ons-page>
 </ons-template>
 
-<ons-template id="about.html">
+<ons-template id="shoulders.html">
   <ons-page>
     <ons-toolbar>
       <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
-          <ons-icon icon="md-menu"></ons-icon>
+        <ons-toolbar-button onclick="back()">
+          <ons-back-button>Back</ons-back-button>
         </ons-toolbar-button>
       </div>
       <div class="center">
@@ -79,8 +87,8 @@
   <ons-page>
     <ons-toolbar>
       <div class="left">
-        <ons-toolbar-button onclick="fn.open()">
-          <ons-icon icon="md-menu"></ons-icon>
+        <ons-toolbar-button onclick="back()">
+          <ons-back-button>Back</ons-back-button>
         </ons-toolbar-button>
       </div>
       <div class="center">
@@ -89,20 +97,33 @@
     </ons-toolbar>
   </ons-page>
 </ons-template>
+<ons-template id="about.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="back()">
+          <ons-back-button>Back</ons-back-button>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        About
+      </div>
+    </ons-toolbar>
+  </ons-page>
+</ons-template>
+
 	<script>
-	window.fn = {};
 
-window.fn.open = function() {
-  var menu = document.getElementById('menu');
-  menu.open();
-};
+var nav = document.getElementById('nav');
 
-window.fn.load = function(page) {
-  var content = document.getElementById('content');
-  var menu = document.getElementById('menu');
-  content.load(page)
-    .then(menu.close.bind(menu));
-};
+function load(page) {
+  nav.pushPage(page);
+}
+
+function back() {
+  nav.popPage();
+}
+
 	</script>
 	</body>
 </html>
