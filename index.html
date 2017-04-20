@@ -9,6 +9,7 @@
 			img {
 			    max-width: 100%;
 			}
+			#abouttab { background-color: red; }
 		</style>
 	</head>
 	<body>
@@ -18,7 +19,7 @@
 		  <ons-tab page="face.html" label="Face" icon="square"></ons-tab>
 		  <ons-tab page="shoulders.html" label="Shoulders" icon="square"></ons-tab>
 		  <ons-tab page="feet.html" label="Feet" icon="square"></ons-tab>
-		  <ons-tab page="about.html" label="About us" icon="square"></ons-tab>
+		  <ons-tab id="abouttab" page="about.html" label="About us" icon="square"></ons-tab>
 		</ons-tabbar>
 
 		<!--ons-splitter>
@@ -51,6 +52,7 @@
 		      </div>
 		    <p style="text-align: center; opacity: 0.6; padding-top: 20px;">
 		    </p>
+		    <ons-list-item tappable onclick="showDialog('dialog-1')">Show dialog with available practices</ons-list-item>
 		  </ons-page>
 		</ons-template>
 
@@ -77,11 +79,15 @@
 					<li>The space surrounding the head.</li>
 				</ul>
 			  </div>
-			  <div ng-controller="myCtrl">
-			    <ons-button modifier="large--cta" ng-click="foo()">
+			  <!--div onclick="loadpage()">
+			    <ons-button modifier="large--cta">
 				  Home
 				</ons-button>
-			  </div>
+			  </div-->
+			  <div class="right" style="text-align: center;">
+			  	<p><b>Done with exercise: </b></p>
+		        <ons-switch></ons-switch>
+		      </div>
 		  </ons-page>
 		</ons-template>
 
@@ -102,6 +108,10 @@
 					<li>Experience the breath flowing in and out of the body.</li>
 				</ul>
 			  </div>
+			  <div class="right" style="text-align: center;">
+			  	<p><b>Done with exercise: </b></p>
+		        <ons-switch></ons-switch>
+		      </div>
 		  </ons-page>
 		</ons-template>
 
@@ -125,6 +135,10 @@
 					<li>Feel the connection between the top of the head and the feet.</li>
 				</ul>
 			</div>
+			  <div class="right" style="text-align: center;">
+			  	<p><b>Done with exercise: </b></p>
+		        <ons-switch></ons-switch>
+		      </div>
 		  </ons-page>
 		</ons-template>
 
@@ -134,8 +148,32 @@
 		      <div style="text-align: center;">
 		      	<h1>About us</h1>
 		      </div>
+		      <div style="text-align: center;">
+		      	<p>Mobile Development with Web Technologies</p>
+		      	<p>Lab 3</p>
+		      	<p>by</p>
+		      	<p>Per Jaakonantti</p>
+		      	<p>Johanna Gustafsson</p>
+		      </div>
 		  </ons-page>
 		</ons-template>
+
+		<ons-dialog id="dialog-1">
+		  <div style="text-align: center; padding: 10px;">
+		    <p>
+		      Available practices:
+		    </p>
+		    	<div "text-align: left;">
+					<p>Face</p>
+					<p>Shoulders</p>
+					<p>Feet</p>
+				</div>
+
+		    <p>
+		      <ons-button onclick="hideDialog('dialog-1')">Close</ons-button>
+		    </p>
+		  </div>
+		</ons-dialog>
 
 	<script>
 	window.fn = {};
@@ -152,16 +190,17 @@ window.fn.load = function(page) {
     .then(menu.close.bind(menu));
 };
 
-var yourApp = angular.module('myApp', ['onsen.directives']);
+var showDialog = function(id) {
+  document
+    .getElementById(id)
+    .show();
+};
 
-yourApp.controller("myCtrl", function($scope) {
-
-    $scope.foo = function(){       
-        alert("foo!");
-    }
-
-});
-
+var hideDialog = function(id) {
+  document
+    .getElementById(id)
+    .hide();
+};
 	</script>
 	</body>
 </html>
