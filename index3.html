@@ -4,6 +4,7 @@
 		<script src="node_modules/onsenui/js/onsenui.js"></script>
 		<link rel="stylesheet" type="text/css" href="node_modules/onsenui/css/onsenui.css">
 		<link rel="stylesheet" type="text/css" href="node_modules/onsenui/css/onsen-css-components.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 	</head>
 	<body>
 		<ons-splitter>
@@ -21,6 +22,9 @@
         </ons-list-item>
         <ons-list-item onclick="fn.load('knees.html')" tappable>
           Knees
+        </ons-list-item>
+        <ons-list-item onclick="fn.load('new.html')" tappable>
+          About
         </ons-list-item>
       </ons-list>
     </ons-page>
@@ -58,6 +62,27 @@
         Head
       </div>
     </ons-toolbar>
+    <img src="photos/photo-face.jpg">
+          <div style="text-align: center;">
+            <h1>Feel Your Face</h1>
+          </div>
+        <div class="my-content" style="padding-left: 5px;">
+        <ul>
+          <li>Become aware of your face.</li>
+          <li>Feel the forehead.</li>
+          <li>The eyebrows.</li>
+          <li>Eyes.</li>
+          <li>Nose.</li>
+          <li>Nostrils.</li>
+          <li>Air flowing through the nostrils.</li>
+          <li>Cheeks.</li>
+          <li>Jaw.</li>
+          <li>Lips.</li>
+          <li>Tongue.</li>
+          <li>Whole of the head.</li>
+          <li>The space surrounding the head.</li>
+        </ul>
+        </div>
   </ons-page>
 </ons-template>
 
@@ -73,6 +98,21 @@
         Shoulders
       </div>
     </ons-toolbar>
+    <img src="photos/photo-shoulders.jpg">
+          <div style="text-align: center;">
+            <h1>Feel Your Shoulders</h1>
+          </div>
+          <div class="my-content" style="padding-left: 5px;">
+        <ul>
+          <li>Let your arms hang loose.</li>
+          <li>Become aware of the shoulders.</li>
+          <li>Slightly lift one shoulder and release it.</li>
+          <li>Let the shoulder come all the way down.</li>
+          <li>Lift the other shoulder and release it.</li>
+          <li>Alternate three more times on each side.</li>
+          <li>Experience the breath flowing in and out of the body.</li>
+        </ul>
+        </div>
   </ons-page>
 </ons-template>
 <ons-template id="knees.html">
@@ -87,6 +127,39 @@
         Knees
       </div>
     </ons-toolbar>
+    <img src="photos/photo-feet.jpg">
+        <div style="text-align: center;">
+            <h1>Feel Your Feet</h1>
+          </div>
+        <div class="my-content" style="padding-left: 5px;">
+        <ul>
+          <li>Stand on your feet.</li>
+          <li>Experience the contact with the ground.</li>
+          <li>Feel into the soles of the feet.</li>
+          <li>Feel the knees.</li>
+          <li>The hips.</li>
+          <li>The spine.</li>
+          <li>Shoulders.</li>
+          <li>Neck.</li>
+          <li>Head.</li>
+          <li>Feel the connection between the top of the head and the feet.</li>
+        </ul>
+      </div>
+  </ons-page>
+</ons-template>
+<ons-template id="new.html">
+  <ons-page>
+    <ons-toolbar>
+      <div class="left">
+        <ons-toolbar-button onclick="fn.open()">
+          <ons-icon icon="md-menu"></ons-icon>
+        </ons-toolbar-button>
+      </div>
+      <div class="center">
+        About
+      </div>
+    </ons-toolbar>
+
   </ons-page>
 </ons-template>
 	<script>
